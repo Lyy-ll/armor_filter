@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(armor_filter LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(Eigen3 REQUIRED)
+
+add_executable(armor_filter
+    main.cpp
+    extended_kalman_filter.cpp
+)
+
+target_link_libraries(armor_filter
+    PRIVATE
+    Eigen3::Eigen
+)
